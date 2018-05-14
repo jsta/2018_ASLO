@@ -16,13 +16,22 @@ gg_base <- ggplot(x_values, aes(x)) +
   ylab("Density") + xlab("Coefficient Value") +
   xlim(-4, 7)
 
-plot_grid(
+(res <- plot_grid(
   gg_base +
-    stat_function(fun = dnorm) +
-    stat_function(fun = dnorm_shift_small) +
+    stat_function(fun = dnorm,
+                  color = viridis::viridis(1, begin = 0)) +
+    stat_function(fun = dnorm_shift_small,
+                  color = viridis::viridis(1, begin = 0.5)) +
     ggtitle("No Connectivity Effect"),
   gg_base +
-    stat_function(fun = dnorm) +
-    stat_function(fun = dnorm_shift_big) +
-    ggtitle("Connectivity Effect")
-)
+    stat_function(fun = dnorm,
+                  color = viridis::viridis(1, begin = 0)) +
+    stat_function(fun = dnorm_shift_big,
+                  color = viridis::viridis(1, begin = 0.5)) +
+    ggtitle("Connectivity Effect"),
+ncol = 1))
+
+ggsave("figures/distribution_cartoon.png", res, scale = 0.8, width = 4.125)
+
+palette <- c(viridis::viridis(1, begin = 0.5),
+      viridis::viridis(1, begin = 0))
