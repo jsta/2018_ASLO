@@ -16,15 +16,82 @@ knitr::opts_chunk$set(echo = FALSE, fig.path = "figures/", dpi=300, fig.height=3
 <!-- * P retention is well predicted by water residence time -->
 <!-- * but there is substantial variation -->
 
-scatter plot fit \cite{MilsteadEstimatingSummerNutrient2013}
+<!-- scatter plot fit \cite{MilsteadEstimatingSummerNutrient2013} -->
 
-\includegraphics[width=0.5\textwidth]{figures/conceptual_p-cycle_pt1.png}
+\begincols
+
+\hfill\column{0.45\textwidth}
+
+\begin{figure}
+\includegraphics[width=6cm]{figures/conceptual_p-cycle_pt1.png}
+\end{figure}
+
+\hfill\column{0.55\textwidth}
+
+```{r milstead, echo=FALSE, warning=FALSE, fig.width=3, fig.height=2.5, fig.cap=""}
+library(ggplot2)
+
+dt_path <- paste0("~/Documents/Science/Dissertation/Analysis/_episodes_rmd/misc", 
+                  "/milstead_x_lagos.rds")
+
+test3 <- readRDS(dt_path)
+
+levels(test3$lakeconnectivity)[1:2] <- c("Secondary", "Primary")
+test3 <- test3[test3$hrt > 0,] 
+test3 <- test3[test3$AreaSqKm > 0.04,] # rm less than 4 ha
+test3 <- test3[!is.na(test3$lakeconnectivity),]
+
+yr_labels <- c("1e-07", "1e-05", 
+               as.character(10/365), 
+               as.character(2/12),
+               "2", "10")
+
+format_labels <- function(x, mult_factor){
+  gsub("\\.+$", "\\1", gsub("0+$", "\\1",
+    trimws(format(round(as.numeric(x), 6) * 
+      mult_factor, scientific = FALSE)), perl = TRUE))
+  }
+
+day_labels   <- ceiling(as.numeric(
+  format_labels(yr_labels, 365)) / 10) * 10
+minute_labels  <- ceiling(as.numeric(
+  format_labels(yr_labels, 365 * 24 * 60)) / 10) * 10
+month_labels  <- round(as.numeric(
+  format_labels(yr_labels, 12)), 0)
+
+mixed_labels <- paste0(
+      c(minute_labels[1:2], day_labels[3], month_labels[4], yr_labels[6:7]), 
+      c(" min", " min", " days", " months", " years", " years"))
+
+quants <- exp(quantile(log(test3[!is.na(test3$lakeconnectivity), "hrt"])))
+
+ggplot(data = test3, 
+    aes(x = hrt, y = Rp)) + geom_point(size = 0.9) +
+  scale_x_log10(labels = mixed_labels, 
+    breaks = as.numeric(yr_labels), limits = c(1 / 365, 11)) +
+  stat_smooth(method = "glm", method.args = list(family = "binomial"), 
+              se = TRUE) +
+  scale_color_brewer(palette = "Set1") +
+  cowplot::theme_cowplot() + 
+  theme(legend.position = "none", 
+        legend.title = element_blank(), 
+        legend.text = element_text(),
+        axis.text.x = element_text(size = 7),
+        axis.text.y = element_text(size = 10), 
+        axis.title = element_text(size = 12)) +
+  xlab("Residence Time") +
+  ylab("P Retention (%)")
+```
+
+\stopcols
 
 ## Expectation
 
-\includegraphics[width=0.5\textwidth]{figures/conceptual_p-cycle.png}
+\includegraphics[width=0.7\textwidth]{figures/conceptual_p-cycle.png}
 
 ## Connectivity explanation
+
+## Scale explanation
 
 ## Questions
 
