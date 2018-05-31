@@ -1,0 +1,12 @@
+.Rhistory
+.RData
+.Rproj.user
+*.log
+*.nav
+*.out
+*.snm
+*.aux
+*.fls
+*.toc
+*.vrb
+*.fdb_latexmk
