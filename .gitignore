@@ -10,3 +10,5 @@
 *.toc
 *.vrb
 *.fdb_latexmk
+*.blg
+*.bbl
