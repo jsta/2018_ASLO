@@ -8,12 +8,10 @@ all: $(OUTPUT)
 background.png: makebackground.jl
 	julia $<
 
-.PHONY: clean install
+.PHONY: clean
 
-rmd2md: $(wildcard $(FILE).Rmd)
-	@$(if $(wildcard $(FILE).Rmd),Rscript -e "library(knitr); knit(input='$<')",echo "No Rmd file found")
-
-$(FILE).md: rmd2md
+$(FILE).md: $(FILE).Rmd
+	Rscript -e "library(knitr); knit(input='$<')"
 
 $(FILE).tex: $(FILE).md
 	pandoc $< -t beamer --slide-level 2 -fmarkdown-implicit_figures -o $@ --template ./template/pl.tex
@@ -27,7 +25,3 @@ $(OUTPUT): $(FILE).pdf
 clean:
 	latexmk	-c
 	-rm *.{vrb,nav,snm}
-
-install:
-	mkdir -p $(INSTALL_DIR)
-	cp *.sty $(INSTALL_DIR)
