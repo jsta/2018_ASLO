@@ -16,7 +16,13 @@ knitr::read_chunk("scripts/distribution_cartoons.R")
 knitr::read_chunk("scripts/nes_map.R")
 ```
 
-## P retention is just about water residence time
+## P retention is important and well-studied
+
+* Figure
+
+* Lit citations
+
+## P retention is not just about water residence time
 
 \vspace{-2em}
 
