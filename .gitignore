@@ -12,3 +12,8 @@
 *.fdb_latexmk
 *.blg
 *.bbl
+latexmkrc
+slides.md
+slides.tex
+slides.pdf
+images
