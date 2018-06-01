@@ -11,7 +11,12 @@ bibliography: test.bib
 knitr::opts_chunk$set(echo = FALSE, fig.path = "figures/", dpi=300, fig.height=3, fig.width=3)
 ```
 
-## Is P retention well predicted by water residence time?
+```{r read_chunks, echo=FALSE}
+knitr::read_chunk("scripts/distribution_cartoons.R")
+knitr::read_chunk("scripts/nes_map.R")
+```
+
+## P retention is not purely a function of water residence time
 
 <!-- * P retention is well predicted by water residence time -->
 <!-- * but there is substantial variation -->
@@ -20,15 +25,15 @@ knitr::opts_chunk$set(echo = FALSE, fig.path = "figures/", dpi=300, fig.height=3
 
 \begincols
 
-\hfill\column{0.45\textwidth}
+\hfill\column{0.48\textwidth}
 
 \begin{figure}
-\includegraphics[width=6cm]{figures/conceptual_p-cycle_pt1.png}
+\includegraphics[width=7cm]{figures/conceptual_p-cycle_pt1.png}
 \end{figure}
 
-\hfill\column{0.55\textwidth}
+\hfill\column{0.52\textwidth}
 
-```{r milstead, echo=FALSE, warning=FALSE, fig.width=3, fig.height=2.5, fig.cap=""}
+```{r milstead, echo=FALSE, warning=FALSE, fig.width=3, fig.height=2.5}
 library(ggplot2)
 
 dt_path <- paste0("~/Documents/Science/Dissertation/Analysis/_episodes_rmd/misc", 
@@ -60,7 +65,7 @@ month_labels  <- round(as.numeric(
   format_labels(yr_labels, 12)), 0)
 
 mixed_labels <- paste0(
-      c(minute_labels[1:2], day_labels[3], month_labels[4], yr_labels[6:7]), 
+      c(minute_labels[1:2], day_labels[3], month_labels[4], yr_labels[5:6]), 
       c(" min", " min", " days", " months", " years", " years"))
 
 quants <- exp(quantile(log(test3[!is.na(test3$lakeconnectivity), "hrt"])))
@@ -77,45 +82,58 @@ ggplot(data = test3,
         legend.title = element_blank(), 
         legend.text = element_text(),
         axis.text.x = element_text(size = 7),
-        axis.text.y = element_text(size = 10), 
-        axis.title = element_text(size = 12)) +
+        axis.text.y = element_text(size = 9), 
+        axis.title = element_text(size = 10)) +
   xlab("Residence Time") +
-  ylab("P Retention (%)")
+  ylab("P Retention")
 ```
 
 \stopcols
 
-## Expectation
+## What are some other potential controls on P retention?
 
-\includegraphics[width=0.7\textwidth]{figures/conceptual_p-cycle.png}
+\includegraphics[width=0.8\textwidth]{figures/conceptual_p-cycle.png}
 
 ## Connectivity explanation
 
+\includegraphics[width=0.9\textwidth]{figures/conny_metric_key1.png}
+\includegraphics[width=0.9\textwidth]{figures/conny_metric_key2.png}
+
 ## Scale explanation
 
-## Questions
+\includegraphics[width=0.6\textwidth]{figures/iws_nws.pdf}
 
-* Does connectivity of lakes and their watersheds influence lake phosphorus retention?  
+## Does connectivity of lakes and their watersheds influence lake phosphorus retention?  
 
-* What is the relative importance of longitudinal versus lateral watershed connectivity in determining lake P retention and **what spatial extents** are most important for connectivity and P retention?
+What is the relative importance of \alert{different connectivity types} in determining lake P retention and \alert{what spatial extents are most important} for connectivity and P retention?
 
 ## Methods
 
-\includegraphics[width=0.5\textwidth]{figures/nes_map.png}
+\begincols
+
+\hfill\column{0.5\textwidth}
+
+```{r nes_map, echo=FALSE, message=FALSE, warning=FALSE}
+
+```
+
+\hfill\column{0.5\textwidth}
+
+```{r distribution_cartoons, echo=FALSE, message=FALSE, warning=FALSE}
+
+```
+
+\stopcols
 
 ## Finding 1
+
+\includegraphics[width=0.9\textwidth]{figures/k_viz-1.pdf}
 
 ## Finding 2
 
 ## Conclusion
 
-* conceptual diagram
-
-## Main goals
-
-1. Easy generation of slides
-2. Integration with `R` and `Julia`
-3. Looks nice
+\includegraphics[width=0.8\textwidth]{figures/conceptual_p-cycle.png}
 
 ## Fonts and spacing
 
@@ -190,22 +208,6 @@ $$
 
 You can use `\alert` within math blocks.
 
-# Using sections
-
-## Section titles
-
-Every section will have a small band with the background image.
-
-They are first-level headers in markdown:
-
-~~~ md
-# Section
-
-## Slide-title
-
-Slide content
-~~~
-
 ## Code highlighting
 
 There is a customized color scheme for code highlighting.
@@ -222,24 +224,6 @@ end
 
 We can also use \alert{unicode characters}.
 
-## Visual counter
-
-The circle next to the title of each slide moves forward at every slide
-(including the section changes).
-
-It is a useful visual key for how much slides are left.
-
-## Output
-
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-turpis egestas. Morbi sollicitudin nisi vitae lorem interdum, eget elementum
-quam elementum. Curabitur quis leo eu metus consequat ultricies. Curabitur sit
-amet convallis risus. Cras vel arcu id risus efficitur commodo et eget velit.
-Curabitur consequat eleifend magna, ut ultricies lorem scelerisque eu. Mauris
-faucibus neque sit amet est elementum, suscipit placerat est interdum. Phasellus
-sed convallis est. Nunc fermentum convallis odio eget gravida. Duis venenatis
-dictum tempor.
-
 ## Background image
 
 The background image is generated from the `makebackground.jl` file. It's the
@@ -248,21 +232,6 @@ k-nearest neighbour graph of a series of random points.
 The file is `background.png` -- it can be replaced by any file \alert{as long
 as} the replacement file is in the 16:10 format (for example, a 1600 $\times$
 1000 image).
-
-## Final slide
-
-The final slide displays the background picture.
-
-This is to avoid the awkward "Switching to black" thing that happens when there
-are no slides left.
-
-# Reproducible documents
-
-## It's in the Makefile
-
-Documents `slides.Jmd` and `slides.Rmd` will be detected.
-
-They will be converted to `slides.md` using either `R`/`knitr` or `Julia`/`Weave.jl`.
 
 # Specific commands
 
@@ -284,18 +253,3 @@ Note that the image \alert{must} be a square.
 \roundpicture{images/nb.png}{}
 
 \stopcols
-
-## Plain slide
-
-This will create a plain slide:
-
-~~~ markdown
-## {.plain}
-
-\plain{This is large text on the background image.}
-~~~
-
-Note that the text within the `\plain` command \alert{must be \LaTeX}.
-
-## {.plain}
-\plain{This is large text on the background image.}

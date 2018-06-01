@@ -16,7 +16,7 @@ rmd2md: $(wildcard $(FILE).Rmd)
 $(FILE).md: rmd2md
 
 $(FILE).tex: $(FILE).md
-	pandoc $< -t beamer --slide-level 2 -o $@ --template ./template/pl.tex
+	pandoc $< -t beamer --slide-level 2 -fmarkdown-implicit_figures -o $@ --template ./template/pl.tex
 
 $(FILE).pdf: $(FILE).tex
 	latexmk
