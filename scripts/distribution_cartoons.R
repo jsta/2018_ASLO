@@ -14,7 +14,12 @@ dnorm_shift_big <- function(x){
 }
 
 gg_base <- ggplot(x_values, aes(x)) +
-  theme(axis.text = element_blank()) +
+  theme(axis.text = element_blank(),
+        panel.background = element_rect(fill = "transparent"),
+        plot.background = element_rect(
+          color = "transparent",
+          fill = "transparent"),
+        panel.border = element_blank()) +
   ylab("Density") + xlab("Coefficient Value") +
   xlim(-4, 7)
 
