@@ -139,7 +139,7 @@ ggplot(data = test3,
 
 \vspace{-1em}
 
-\includegraphics[width=0.75\textwidth]{figures/k_viz-1.pdf}
+\includegraphics[width=0.75\textwidth]{figures/06_k-1.pdf}
 
 ## Finding 2
 
