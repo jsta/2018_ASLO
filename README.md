@@ -1,16 +1,3 @@
-## TODO
+# DOES LAKE AND STREAM CONNECTIVITY CONTROL PHOSPHORUS RETENTION IN LAKES?
 
-## Columns
-
-~~~ latex
-\begincols
-\column{0.48\textwidth}
-
-Column 1
-
-\hfill\column{0.48\textwidth}
-
-Column 2
-
-\stopcols
-~~~
+[Slides](slides_final.pdf)
