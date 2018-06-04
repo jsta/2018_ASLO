@@ -18,9 +18,20 @@ knitr::read_chunk("scripts/nes_map.R")
 
 ## P retention is important and well-studied
 
-* Figure
+\vspace{-3em}
+\begincols[t]
+
+\hfill\column{0.48\textwidth}
+
+\begin{figure}
+\includegraphics[width=4cm]{figures/incrementalcumulative.png}
+\end{figure}
+
+\hfill\column{0.48\textwidth}
 
 * Lit citations
+
+\stopcols
 
 ## P retention is not just about water residence time
 
@@ -36,7 +47,7 @@ knitr::read_chunk("scripts/nes_map.R")
 
 \hfill\column{0.52\textwidth}
 
-```{r milstead, echo=FALSE, warning=FALSE, fig.width=3, fig.height=2.5}
+```{r milstead, echo=FALSE, warning=FALSE, fig.width=3, fig.height=2.5, cache=TRUE}
 library(ggplot2)
 
 dt_path <- paste0("~/Documents/Science/Dissertation/Analysis/_episodes_rmd/misc", 
@@ -135,139 +146,139 @@ ggplot(data = test3,
 
 \stopcols
 
-## Finding 1
+## Results
 
 \vspace{-1em}
 
 \includegraphics[width=0.75\textwidth]{figures/06_k-1.pdf}
 
-## Finding 2
-
 ## Conclusion
 
 \includegraphics[width=0.8\textwidth]{figures/conceptual_p-cycle.png}
 
-## Implications
+\begin{textblock}{0.5}(8,8)
+  Test
+ \end{textblock}
 
-* Watershed controls on P delivery to lakes
+<!-- * Watershed controls on P delivery to lakes -->
 
-* WS:LA ratio
+<!-- * WS:LA ratio -->
 
-## Fonts and spacing
+<!-- ## Fonts and spacing -->
 
-The document uses the \alert{Google Crosscore} family
+<!-- The document uses the \alert{Google Crosscore} family -->
 
-Main body
-: Tinos or Arimo
+<!-- Main body -->
+<!-- : Tinos or Arimo -->
 
-Maths
-: $\text{Tinos}$
+<!-- Maths -->
+<!-- : $\text{Tinos}$ -->
 
-Code
-: `Cousine`
+<!-- Code -->
+<!-- : `Cousine` -->
 
-The linespread value has been increased to about $1.3$
+<!-- The linespread value has been increased to about $1.3$ -->
 
-## Serif font theme
+<!-- ## Serif font theme -->
 
-The default font theme is sans serif. You can change the `template/pl.tex` first line to:
+<!-- The default font theme is sans serif. You can change the `template/pl.tex` first line to: -->
 
-~~~ latex
-@@ -1,4 +1,4 @@
--\documentclass[11pt, compress, aspectratio=1610]{beamer}
-+\documentclass[11pt, compress, aspectratio=1610, serif]{beamer}
+<!-- ~~~ latex -->
+<!-- @@ -1,4 +1,4 @@ -->
+<!-- -\documentclass[11pt, compress, aspectratio=1610]{beamer} -->
+<!-- +\documentclass[11pt, compress, aspectratio=1610, serif]{beamer} -->
 
-\usetheme{pl}
-~~~
+<!-- \usetheme{pl} -->
+<!-- ~~~ -->
 
-## Colors
+<!-- ## Colors -->
 
-The structure elements are in green, inline code is in `blue`, and alerted text
-in \alert{orange}.
+<!-- The structure elements are in green, inline code is in `blue`, and alerted text -->
+<!-- in \alert{orange}. -->
 
-The background is off-white: it will *look* like it's white, but with less
-eyestrain.
+<!-- The background is off-white: it will *look* like it's white, but with less -->
+<!-- eyestrain. -->
 
-The foreground is not-quite-black either.
+<!-- The foreground is not-quite-black either. -->
 
-## Tables
+<!-- ## Tables -->
 
-| PID   | COMMAND        | %CPU | TIME     | #TH |
-|:------|:---------------|-----:|:---------|:---:|
-| 25645 | `top`          | 16.3 | 00:02.03 | 1/1 |
-| 25642 | `bash`         |  0.0 | 00:00.01 |  1  |
-| 25641 | `login`        |  0.0 | 00:00.02 |  2  |
-| 25634 | `mdworker`     |  0.0 | 00:00.07 |  3  |
-| 25624 | `mdworker`     |  0.0 | 00:00.14 |  4  |
-| 25591 | `mdworker`     |  0.0 | 00:00.14 |  3  |
-| 25571 | `com.apple.iC` |  0.0 | 00:00.31 |  5  |
-| 25414 | `installd`     |  0.0 | 00:00.52 |  2  |
-| 25366 | `com.apple.We` |  0.0 | 00:00.07 |  4  |
+<!-- | PID   | COMMAND        | %CPU | TIME     | #TH | -->
+<!-- |:------|:---------------|-----:|:---------|:---:| -->
+<!-- | 25645 | `top`          | 16.3 | 00:02.03 | 1/1 | -->
+<!-- | 25642 | `bash`         |  0.0 | 00:00.01 |  1  | -->
+<!-- | 25641 | `login`        |  0.0 | 00:00.02 |  2  | -->
+<!-- | 25634 | `mdworker`     |  0.0 | 00:00.07 |  3  | -->
+<!-- | 25624 | `mdworker`     |  0.0 | 00:00.14 |  4  | -->
+<!-- | 25591 | `mdworker`     |  0.0 | 00:00.14 |  3  | -->
+<!-- | 25571 | `com.apple.iC` |  0.0 | 00:00.31 |  5  | -->
+<!-- | 25414 | `installd`     |  0.0 | 00:00.52 |  2  | -->
+<!-- | 25366 | `com.apple.We` |  0.0 | 00:00.07 |  4  | -->
 
-## PGF Plots
+<!-- ## PGF Plots -->
 
-\centering
-\begin{tikzpicture}
-  \begin{axis}[width=0.8\textwidth,height=0.6\textheight,grid=major,xlabel=$x$,ylabel=$f(x)$]
-  \addplot {-x^5 - 242};
-  \addlegendentry{model}
-  \addplot coordinates { (-4.77778,2027.60977) (-3.55556,347.84069) (-2.33333,22.58953) (-1.11111,-493.50066) (0.11111,46.66082) (1.33333,-205.56286) (2.55556,-341.40638) (3.77778,-1169.24780) (5.00000,-3269.56775) };
-  \addlegendentry{estimate}
-  \end{axis}
-\end{tikzpicture}
+<!-- \centering -->
+<!-- \begin{tikzpicture} -->
+<!--   \begin{axis}[width=0.8\textwidth,height=0.6\textheight,grid=major,xlabel=$x$,ylabel=$f(x)$] -->
+<!--   \addplot {-x^5 - 242}; -->
+<!--   \addlegendentry{model} -->
+<!--   \addplot coordinates { (-4.77778,2027.60977) (-3.55556,347.84069) (-2.33333,22.58953) (-1.11111,-493.50066) (0.11111,46.66082) (1.33333,-205.56286) (2.55556,-341.40638) (3.77778,-1169.24780) (5.00000,-3269.56775) }; -->
+<!--   \addlegendentry{estimate} -->
+<!--   \end{axis} -->
+<!-- \end{tikzpicture} -->
 
-## Maths
+<!-- ## Maths -->
 
-The Input family of fonts has some support for Greek and mathematical symbols:
+<!-- The Input family of fonts has some support for Greek and mathematical symbols: -->
 
-$$
-\frac{1}{N}\frac{\text{d}}{\text{d}t}N = N\left(r-\alert{\alpha N}\right)
-$$
+<!-- $$ -->
+<!-- \frac{1}{N}\frac{\text{d}}{\text{d}t}N = N\left(r-\alert{\alpha N}\right) -->
+<!-- $$ -->
 
-You can use `\alert` within math blocks.
+<!-- You can use `\alert` within math blocks. -->
 
-## Code highlighting
+<!-- ## Code highlighting -->
 
-There is a customized color scheme for code highlighting.
+<!-- There is a customized color scheme for code highlighting. -->
 
-~~~ julia
-α = 2.0
-b, c = "abc", 'c'
-# This code does nothing (useful)
-for i in 1:10
-  rand()
-  @elapsed println("i:\t$i")
-end
-~~~
+<!-- ~~~ julia -->
+<!-- α = 2.0 -->
+<!-- b, c = "abc", 'c' -->
+<!-- # This code does nothing (useful) -->
+<!-- for i in 1:10 -->
+<!--   rand() -->
+<!--   @elapsed println("i:\t$i") -->
+<!-- end -->
+<!-- ~~~ -->
 
-We can also use \alert{unicode characters}.
+<!-- We can also use \alert{unicode characters}. -->
 
-## Background image
+<!-- ## Background image -->
 
-The background image is generated from the `makebackground.jl` file. It's the
-k-nearest neighbour graph of a series of random points.
+<!-- The background image is generated from the `makebackground.jl` file. It's the -->
+<!-- k-nearest neighbour graph of a series of random points. -->
 
-The file is `background.png` -- it can be replaced by any file \alert{as long
-as} the replacement file is in the 16:10 format (for example, a 1600 $\times$
-1000 image).
+<!-- The file is `background.png` -- it can be replaced by any file \alert{as long -->
+<!-- as} the replacement file is in the 16:10 format (for example, a 1600 $\times$ -->
+<!-- 1000 image). -->
 
-# Specific commands
+<!-- # Specific commands -->
 
-## Cropped images
+<!-- ## Cropped images -->
 
-\begincols
-\column{0.68\textwidth}
+<!-- \begincols -->
+<!-- \column{0.68\textwidth} -->
 
-The `roundpicture` command will display a picture, resized to fit into a circle:
+<!-- The `roundpicture` command will display a picture, resized to fit into a circle: -->
 
-~~~ latex
-\roundpicture{images/nb.png}{Optional text}
-~~~
+<!-- ~~~ latex -->
+<!-- \roundpicture{images/nb.png}{Optional text} -->
+<!-- ~~~ -->
 
-Note that the image \alert{must} be a square.
+<!-- Note that the image \alert{must} be a square. -->
 
-\hfill\column{0.28\textwidth}
+<!-- \hfill\column{0.28\textwidth} -->
 
-\roundpicture{images/nb.png}{}
+<!-- \roundpicture{images/nb.png}{} -->
 
-\stopcols
+<!-- \stopcols -->

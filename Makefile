@@ -1,27 +1,30 @@
-TEXMFHOME = $(shell kpsewhich -var-value=TEXMFHOME)
-INSTALL_DIR = $(TEXMFHOME)/tex/latex/pltheme
-FILE=slides
-OUTPUT=$(FILE)_final.pdf
-
-all: $(OUTPUT)
+all: slides_final.pdf
 
 background.png: makebackground.jl
 	julia $<
 
-.PHONY: clean
+.PHONY: all clean figures
 
-$(FILE).md: $(FILE).Rmd
+figures: figures/incrementalcumulative.png
+
+slides.md: slides.Rmd
 	Rscript -e "library(knitr); knit(input='$<')"
 
-$(FILE).tex: $(FILE).md
+slides.tex: slides.md
 	pandoc $< -t beamer --slide-level 2 -fmarkdown-implicit_figures -o $@ --template ./template/pl.tex
 
-$(FILE).pdf: $(FILE).tex
+slides.pdf: slides.tex
 	latexmk
 
-$(OUTPUT): $(FILE).pdf
+slides_final.pdf: slides.pdf
 	cp $< $@
 
 clean:
 	latexmk	-c
 	-rm *.{vrb,nav,snm}
+
+figures/incrementalcumulative.png: figures/incrementalcumulative.tex
+	pdflatex $<
+	mv incrementalcumulative.pdf figures/incrementalcumulative.pdf
+	pdfcrop figures/incrementalcumulative.pdf figures/incrementalcumulative.pdf
+	convert -density 300 figures/incrementalcumulative.pdf figures/incrementalcumulative.png
