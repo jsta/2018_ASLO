@@ -29,21 +29,21 @@ knitr::read_chunk("scripts/nes_map.R")
 
 \hfill\column{0.54\textwidth}
 
-* P retention directly controls downstream transport \cite{alexander_estimating_2002}
+\vspace{2em}
 
-\vspace{1em}
+P retention directly controls downstream transport \cite{alexander_estimating_2002}
 
-* P retention indirectly controls sediment P accumulation
+\vspace{2em}
 
-\vspace{1em}
-
-* P retention is primarily controlled by water residence time \cite{vollenweiderInputoutputModels1975} 
+P retention indirectly controls sediment P accumulation \cite{SondergaardPersistentinternalphosphorus2013}
 
 \stopcols
 
 ## P retention is not just about water residence time
 
 \vspace{-2em}
+
+<!-- P retention is primarily controlled by water residence time \cite{vollenweiderInputoutputModels1975}  -->
 
 \begincols
 
@@ -164,8 +164,18 @@ ggplot(data = test3,
 
 \includegraphics[width=0.8\textwidth]{figures/conceptual_p-cycle.png}
 
-\begin{textblock}{0.5}(10,10)
-  Test
+\setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight}
+\begin{textblock}{0.8}(0.3,0.85)
+  P retention related to network connectivity metrics
+ \end{textblock}
+ 
+ ## Conclusion
+
+\includegraphics[width=0.8\textwidth]{figures/conceptual_p-cycle.png}
+
+\setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight}
+\begin{textblock}{0.8}(0.3,0.85)
+  Lake-watershed connectivity related to watershed area
  \end{textblock}
 
 <!-- * Watershed controls on P delivery to lakes -->
