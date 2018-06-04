@@ -3,11 +3,9 @@ all: slides_final.pdf
 background.png: makebackground.jl
 	julia $<
 
-.PHONY: all clean figures
+.PHONY: all clean
 
-figures: figures/incrementalcumulative.png
-
-slides.md: slides.Rmd
+slides.md: slides.Rmd figures/incrementalcumulative.png
 	Rscript -e "library(knitr); knit(input='$<')"
 
 slides.tex: slides.md

@@ -1,0 +1,21 @@
+\documentclass[bigger]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{tabularx}
+
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+
+\input{beamer-lake-fig/beamer-lake-fig.tex}
+
+\begin{document}
+
+\section{Incremental versus Cumulative Loading}
+\begin{frame}
+  \begin{center}
+    \incrementalcumulativeloads[1.1]
+  \end{center}
+\end{frame}
+
+\end{document}

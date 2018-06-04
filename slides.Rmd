@@ -33,15 +33,15 @@ knitr::read_chunk("scripts/nes_map.R")
 
 P retention directly controls downstream transport \cite{alexander_estimating_2002}
 
-\vspace{2em}
+\vspace{5em}
 
 P retention indirectly controls sediment P accumulation \cite{SondergaardPersistentinternalphosphorus2013}
 
 \stopcols
 
-## P retention is not just about water residence time
+## P retention is controlled by water residence time \cite{vollenweiderInputoutputModels1975}
 
-\vspace{-2em}
+\vspace{-4em}
 
 <!-- P retention is primarily controlled by water residence time \cite{vollenweiderInputoutputModels1975}  -->
 
@@ -112,19 +112,27 @@ ggplot(data = test3,
           fill = "transparent"), 
         panel.border = element_blank()) +
   xlab("Residence Time") +
-  ylab("P Retention")
+  ylab("P Retention") + 
+  annotate("text", label = "Data from Milstead et al. (2013)", x = 1, y = 1, size = 2)
 ```
 
 \stopcols
 
 ## What are some other potential controls on P retention?
 
-\includegraphics[width=0.8\textwidth]{figures/conceptual_p-cycle.png}
+\vspace{-1em}
+
+\includegraphics[width=0.9\textwidth]{figures/conceptual_p-cycle_pt2.png}
 
 ## Multiple ways to define connectivity
 
-\includegraphics[width=0.9\textwidth]{figures/conny_metric_key1.png}
-\includegraphics[width=0.9\textwidth]{figures/conny_metric_key2.png}
+\vspace{-2em}
+
+\includegraphics[width=1\textwidth, left]{figures/conny_metric_key1.png}
+
+\vspace{1em}
+
+\includegraphics[width=1\textwidth]{figures/conny_metric_key2.png}
 
 ## What is an appropriate scale for measuring connectivity?
 
@@ -154,149 +162,37 @@ ggplot(data = test3,
 
 \stopcols
 
-## Results
+## Distributions of P loading model processing coefficients
 
 \vspace{-1em}
 
-\includegraphics[width=0.75\textwidth]{figures/06_k-1.pdf}
+\includegraphics[width=0.9\textwidth]{figures/06_k-1.pdf}
 
-## Conclusion
+## Results table of delta k's
 
-\includegraphics[width=0.8\textwidth]{figures/conceptual_p-cycle.png}
+## Connectivity of lakes and their watersheds is related to P retention.
 
-\setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight}
-\begin{textblock}{0.8}(0.3,0.85)
-  P retention related to network connectivity metrics
- \end{textblock}
+\begincols
+
+\hfill\column{0.5\textwidth}
+
+\includegraphics[width=0.6\textwidth]{figures/conceptual_p-cycle_pt5.png}
+
+\hfill\column{0.5\textwidth}
+
+Connectivity at the network (broader) scale is more important than connectivity at finer scales.
+
+\stopcols
+
+<!-- \setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight} -->
+<!-- \begin{textblock}{0.8}(0.3,0.85) -->
+<!-- \end{textblock} -->
  
- ## Conclusion
-
-\includegraphics[width=0.8\textwidth]{figures/conceptual_p-cycle.png}
-
-\setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight}
-\begin{textblock}{0.8}(0.3,0.85)
-  Lake-watershed connectivity related to watershed area
- \end{textblock}
+<!-- \setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight} -->
+<!-- \begin{textblock}{0.8}(0.3,0.85) -->
+<!--   Lake-watershed connectivity related to watershed area -->
+<!--  \end{textblock} -->
 
 <!-- * Watershed controls on P delivery to lakes -->
 
 <!-- * WS:LA ratio -->
-
-<!-- ## Fonts and spacing -->
-
-<!-- The document uses the \alert{Google Crosscore} family -->
-
-<!-- Main body -->
-<!-- : Tinos or Arimo -->
-
-<!-- Maths -->
-<!-- : $\text{Tinos}$ -->
-
-<!-- Code -->
-<!-- : `Cousine` -->
-
-<!-- The linespread value has been increased to about $1.3$ -->
-
-<!-- ## Serif font theme -->
-
-<!-- The default font theme is sans serif. You can change the `template/pl.tex` first line to: -->
-
-<!-- ~~~ latex -->
-<!-- @@ -1,4 +1,4 @@ -->
-<!-- -\documentclass[11pt, compress, aspectratio=1610]{beamer} -->
-<!-- +\documentclass[11pt, compress, aspectratio=1610, serif]{beamer} -->
-
-<!-- \usetheme{pl} -->
-<!-- ~~~ -->
-
-<!-- ## Colors -->
-
-<!-- The structure elements are in green, inline code is in `blue`, and alerted text -->
-<!-- in \alert{orange}. -->
-
-<!-- The background is off-white: it will *look* like it's white, but with less -->
-<!-- eyestrain. -->
-
-<!-- The foreground is not-quite-black either. -->
-
-<!-- ## Tables -->
-
-<!-- | PID   | COMMAND        | %CPU | TIME     | #TH | -->
-<!-- |:------|:---------------|-----:|:---------|:---:| -->
-<!-- | 25645 | `top`          | 16.3 | 00:02.03 | 1/1 | -->
-<!-- | 25642 | `bash`         |  0.0 | 00:00.01 |  1  | -->
-<!-- | 25641 | `login`        |  0.0 | 00:00.02 |  2  | -->
-<!-- | 25634 | `mdworker`     |  0.0 | 00:00.07 |  3  | -->
-<!-- | 25624 | `mdworker`     |  0.0 | 00:00.14 |  4  | -->
-<!-- | 25591 | `mdworker`     |  0.0 | 00:00.14 |  3  | -->
-<!-- | 25571 | `com.apple.iC` |  0.0 | 00:00.31 |  5  | -->
-<!-- | 25414 | `installd`     |  0.0 | 00:00.52 |  2  | -->
-<!-- | 25366 | `com.apple.We` |  0.0 | 00:00.07 |  4  | -->
-
-<!-- ## PGF Plots -->
-
-<!-- \centering -->
-<!-- \begin{tikzpicture} -->
-<!--   \begin{axis}[width=0.8\textwidth,height=0.6\textheight,grid=major,xlabel=$x$,ylabel=$f(x)$] -->
-<!--   \addplot {-x^5 - 242}; -->
-<!--   \addlegendentry{model} -->
-<!--   \addplot coordinates { (-4.77778,2027.60977) (-3.55556,347.84069) (-2.33333,22.58953) (-1.11111,-493.50066) (0.11111,46.66082) (1.33333,-205.56286) (2.55556,-341.40638) (3.77778,-1169.24780) (5.00000,-3269.56775) }; -->
-<!--   \addlegendentry{estimate} -->
-<!--   \end{axis} -->
-<!-- \end{tikzpicture} -->
-
-<!-- ## Maths -->
-
-<!-- The Input family of fonts has some support for Greek and mathematical symbols: -->
-
-<!-- $$ -->
-<!-- \frac{1}{N}\frac{\text{d}}{\text{d}t}N = N\left(r-\alert{\alpha N}\right) -->
-<!-- $$ -->
-
-<!-- You can use `\alert` within math blocks. -->
-
-<!-- ## Code highlighting -->
-
-<!-- There is a customized color scheme for code highlighting. -->
-
-<!-- ~~~ julia -->
-<!-- α = 2.0 -->
-<!-- b, c = "abc", 'c' -->
-<!-- # This code does nothing (useful) -->
-<!-- for i in 1:10 -->
-<!--   rand() -->
-<!--   @elapsed println("i:\t$i") -->
-<!-- end -->
-<!-- ~~~ -->
-
-<!-- We can also use \alert{unicode characters}. -->
-
-<!-- ## Background image -->
-
-<!-- The background image is generated from the `makebackground.jl` file. It's the -->
-<!-- k-nearest neighbour graph of a series of random points. -->
-
-<!-- The file is `background.png` -- it can be replaced by any file \alert{as long -->
-<!-- as} the replacement file is in the 16:10 format (for example, a 1600 $\times$ -->
-<!-- 1000 image). -->
-
-<!-- # Specific commands -->
-
-<!-- ## Cropped images -->
-
-<!-- \begincols -->
-<!-- \column{0.68\textwidth} -->
-
-<!-- The `roundpicture` command will display a picture, resized to fit into a circle: -->
-
-<!-- ~~~ latex -->
-<!-- \roundpicture{images/nb.png}{Optional text} -->
-<!-- ~~~ -->
-
-<!-- Note that the image \alert{must} be a square. -->
-
-<!-- \hfill\column{0.28\textwidth} -->
-
-<!-- \roundpicture{images/nb.png}{} -->
-
-<!-- \stopcols -->
