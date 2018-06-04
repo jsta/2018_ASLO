@@ -21,15 +21,23 @@ knitr::read_chunk("scripts/nes_map.R")
 \vspace{-3em}
 \begincols[t]
 
-\hfill\column{0.48\textwidth}
+\hfill\column{0.42\textwidth}
 
 \begin{figure}
 \includegraphics[width=4cm]{figures/incrementalcumulative.png}
 \end{figure}
 
-\hfill\column{0.48\textwidth}
+\hfill\column{0.54\textwidth}
 
-* Lit citations
+* P retention directly controls downstream transport \cite{alexander_estimating_2002}
+
+\vspace{1em}
+
+* P retention indirectly controls sediment P accumulation
+
+\vspace{1em}
+
+* P retention is primarily controlled by water residence time \cite{vollenweiderInputoutputModels1975} 
 
 \stopcols
 
@@ -156,7 +164,7 @@ ggplot(data = test3,
 
 \includegraphics[width=0.8\textwidth]{figures/conceptual_p-cycle.png}
 
-\begin{textblock}{0.5}(8,8)
+\begin{textblock}{0.5}(10,10)
   Test
  \end{textblock}
 
