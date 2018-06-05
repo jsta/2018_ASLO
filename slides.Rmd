@@ -128,6 +128,11 @@ ggplot(data = test3,
 
 \vspace{-2em}
 
+\setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight}
+\begin{textblock}{0.7}(0.5,0.17)
+  Low Connectivity  \hspace{2em}  High Connectivity
+ \end{textblock}
+
 \includegraphics[width=1\textwidth, left]{figures/conny_metric_key1.png}
 
 \vspace{1em}
@@ -136,6 +141,7 @@ ggplot(data = test3,
 
 ## What is an appropriate scale for measuring connectivity?
 
+\centering
 \includegraphics[width=0.6\textwidth]{figures/iws_nws.pdf}
 
 ## {.plain}
@@ -166,7 +172,7 @@ ggplot(data = test3,
 
 \vspace{-1em}
 
-\includegraphics[width=0.9\textwidth]{figures/06_k-1.pdf}
+\includegraphics[width=0.75\textwidth]{figures/06_k-1.pdf}
 
 ## Results table of delta k's
 
@@ -174,20 +180,20 @@ ggplot(data = test3,
 
 \begincols
 
-\hfill\column{0.5\textwidth}
+\hfill\column{0.6\textwidth}
 
-\includegraphics[width=0.6\textwidth]{figures/conceptual_p-cycle_pt5.png}
+\includegraphics[width=\textwidth]{figures/conceptual_p-cycle_pt5.png}
 
-\hfill\column{0.5\textwidth}
+\hfill\column{0.4\textwidth}
+
+Connectivity of lakes and their watersheds is related to P retention.
+
+\vspace{2em}
 
 Connectivity at the network (broader) scale is more important than connectivity at finer scales.
 
 \stopcols
 
-<!-- \setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight} -->
-<!-- \begin{textblock}{0.8}(0.3,0.85) -->
-<!-- \end{textblock} -->
- 
 <!-- \setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight} -->
 <!-- \begin{textblock}{0.8}(0.3,0.85) -->
 <!--   Lake-watershed connectivity related to watershed area -->
