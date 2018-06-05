@@ -19,9 +19,9 @@
 \mdfsetup{
   backgroundcolor=shadecolor,
   linecolor=shadecolor,
-  innerleftmargin=5pt,
-  innerrightmargin=5pt,
-  leftmargin=-5pt,
+  innerleftmargin=2pt,
+  innerrightmargin=2pt,
+  leftmargin=-8pt,
   rightmargin=-5pt,
   roundcorner=3pt
 }
@@ -114,7 +114,13 @@
 
 \begin{document}
 
+\begin{frame}
 \maketitle
+\setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight}
+\begin{textblock}{0.7}(0.75,0.92)
+  http://doi.org/ckpf
+ \end{textblock}
+\end{frame}
 
 $body$
 
@@ -127,6 +133,7 @@ $body$
 \end{frame}
 
 \bibliographystyle{apalike}
-\bibliography{test}
+{\footnotesize
+\bibliography{test}}
 
 \end{document}

@@ -3,8 +3,10 @@ title: Does Lake and Stream Connectivity
 subtitle: Control Phosphorus Retention in Lakes?
 author: Joseph Stachelek and Patricia Soranno
 institute: Michigan State University
-date: "2018\\ June"
+date: "Assoc. Limnology and Oceanography, 2018\\ June"
 bibliography: test.bib
+nocite: | 
+  @MilsteadEstimatingSummerNutrient2013
 ---
 
 ```{r setup, include=FALSE}
@@ -16,10 +18,12 @@ knitr::read_chunk("scripts/distribution_cartoons.R")
 knitr::read_chunk("scripts/nes_map.R")
 ```
 
-## P retention is important and well-studied
+## Lake phosphorus (P) retention
+ <!-- is important and well-studied -->
 
-\vspace{-3em}
-\begincols[t]
+\vspace{-2em}
+
+\begincols
 
 \hfill\column{0.42\textwidth}
 
@@ -29,8 +33,6 @@ knitr::read_chunk("scripts/nes_map.R")
 
 \hfill\column{0.54\textwidth}
 
-\vspace{2em}
-
 P retention directly controls downstream transport \cite{alexander_estimating_2002}
 
 \vspace{5em}
@@ -39,23 +41,26 @@ P retention indirectly controls sediment P accumulation \cite{SondergaardPersist
 
 \stopcols
 
-## P retention is controlled by water residence time \cite{vollenweiderInputoutputModels1975}
+## P retention models \cite{vollenweiderInputoutputModels1975}
 
 \vspace{-4em}
 
 <!-- P retention is primarily controlled by water residence time \cite{vollenweiderInputoutputModels1975}  -->
 
-\begincols
+\begincols[c]
 
-\hfill\column{0.48\textwidth}
+\column{0.52\textwidth}
 
 \begin{figure}
-\includegraphics[width=7cm]{figures/conceptual_p-cycle_pt1.png}
+\includegraphics[width=8cm]{figures/conceptual_p-cycle_pt1.png}
 \end{figure}
 
-\hfill\column{0.52\textwidth}
+\hfill\column{0.46\textwidth}
 
-```{r milstead, echo=FALSE, warning=FALSE, fig.width=3, fig.height=2.5, cache=TRUE}
+\vspace{1em}
+
+\nocite{MilsteadEstimatingSummerNutrient2013}
+```{r milstead, echo=FALSE, warning=FALSE, fig.width=2.8, fig.height=2.3, cache=TRUE}
 library(ggplot2)
 
 dt_path <- paste0("~/Documents/Science/Dissertation/Analysis/_episodes_rmd/misc", 
@@ -118,7 +123,9 @@ ggplot(data = test3,
 
 \stopcols
 
-## What are some other potential controls on P retention?
+## Extending P retention models
+
+<!-- What are some other potential controls on P retention? -->
 
 \vspace{-1em}
 
@@ -139,7 +146,9 @@ ggplot(data = test3,
 
 \includegraphics[width=1\textwidth]{figures/conny_metric_key2.png}
 
-## What is an appropriate scale for measuring connectivity?
+## Connectivity scales
+
+<!-- What is an appropriate scale for measuring connectivity? -->
 
 \centering
 \includegraphics[width=0.6\textwidth]{figures/iws_nws.pdf}
@@ -168,17 +177,40 @@ ggplot(data = test3,
 
 \stopcols
 
-## Distributions of P loading model processing coefficients
+## P retention (processing) coefficient distributions
 
 \vspace{-1em}
+\centering
 
 \includegraphics[width=0.75\textwidth]{figures/06_k-1.pdf}
 
-## Results table of delta k's
+## Connectivity metric importance
 
-## Connectivity of lakes and their watersheds is related to P retention.
+\vspace{-1em}
 
-\begincols
+\small
+
+|Metric                |Scale |Connectivity Type | Delta k |
+|:---------------------|:-----|:-----------------|:-------:|
+|`Average link length`   |`Network`   |`Longitudinal`   |  `0.23`   |
+|`Closest lake distance` |`Network`   |`Longitudinal`|  `0.22`   |
+|Stream density        |Network   |Lateral       |  0.20   |
+|Lake connection       |Focal     |Longitudinal      |  0.17   |
+|Upstream lake area    |Network   |Longitudinal  |  0.16   |
+|Max depth             |Focal     |-                 |  0.15   |
+|Average link length   |Lake      |Longitudinal     |  0.14   |
+|Baseflow              |Lake      |Lateral          |  0.12   |
+|Stream order ratio    |Lake      |Longitudinal     |  0.10   |
+
+\normalsize
+
+## Does Lake and Stream Connectivity Control Phosphorus Retention in Lakes?
+
+\nocite{stacheleksoranno}
+
+\vspace{-2em}
+
+\begincols[t]
 
 \hfill\column{0.6\textwidth}
 
@@ -190,7 +222,7 @@ Connectivity of lakes and their watersheds is related to P retention.
 
 \vspace{2em}
 
-Connectivity at the network (broader) scale is more important than connectivity at finer scales.
+Connectivity at the network scale is more important than connectivity at finer scales.
 
 \stopcols
 
