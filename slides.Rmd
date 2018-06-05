@@ -41,26 +41,30 @@ P retention indirectly controls sediment P accumulation \cite{SondergaardPersist
 
 \stopcols
 
-## P retention models \cite{vollenweiderInputoutputModels1975}
+## Estimating P retention for a single lake
+
+* Field work material
+
+* Sediment traps
+
+* Benthic coring
+
+## P retention conceptual model
 
 \vspace{-4em}
 
 <!-- P retention is primarily controlled by water residence time \cite{vollenweiderInputoutputModels1975}  -->
 
-\begincols[t]
-
-\column{0.52\textwidth}
-
 \begin{figure}
 \includegraphics[width=8cm]{figures/conceptual_p-cycle_pt1.png}
 \end{figure}
 
-\hfill\column{0.46\textwidth}
-
-\vspace{1em}
+## P retention versus water residence time
+\vspace{-2em}
 
 \nocite{MilsteadEstimatingSummerNutrient2013}
-```{r milstead, echo=FALSE, warning=FALSE, fig.width=2.8, fig.height=2.3, cache=TRUE}
+\centering
+```{r milstead, echo=FALSE, warning=FALSE, fig.width=4, fig.height=3.3, cache=TRUE}
 library(ggplot2)
 
 dt_path <- paste0("~/Documents/Science/Dissertation/Analysis/_episodes_rmd/misc", 
@@ -121,8 +125,6 @@ ggplot(data = test3,
   annotate("text", label = "Data from Milstead et al. (2013)", x = 1, y = 1, size = 2)
 ```
 
-\stopcols
-
 ## Extending P retention models
 
 <!-- What are some other potential controls on P retention? -->
@@ -146,7 +148,7 @@ ggplot(data = test3,
 
 \includegraphics[width=1\textwidth]{figures/conny_metric_key2.png}
 
-## Connectivity scales
+## Watershed extents
 
 <!-- What is an appropriate scale for measuring connectivity? -->
 
@@ -157,7 +159,9 @@ ggplot(data = test3,
 
 \plain {1. Does connectivity of lakes and their watersheds influence lake phosphorus retention?}{2. What is the relative importance of \alert{different connectivity metrics} in determining lake P retention and \alert{what spatial extents are most important} for connectivity and P retention?}
 
-## Methods
+## Methods - Connectivity groups
+
+## Methods - P retention modelling
 
 \vspace{-1em}
 
@@ -184,27 +188,7 @@ ggplot(data = test3,
 
 \includegraphics[width=0.75\textwidth]{figures/06_k-1.pdf}
 
-## Connectivity metric importance
-
-\vspace{-1em}
-
-\small
-
-|Metric                |Scale |Connectivity Type | Delta k |
-|:---------------------|:-----|:-----------------|:-------:|
-|`Average link length`   |`Network`   |`Longitudinal`   |  `0.23`   |
-|`Closest lake distance` |`Network`   |`Longitudinal`|  `0.22`   |
-|Stream density        |Network   |Lateral       |  0.20   |
-|Lake connection       |Focal     |Longitudinal      |  0.17   |
-|Upstream lake area    |Network   |Longitudinal  |  0.16   |
-|Max depth             |Focal     |-                 |  0.15   |
-|Average link length   |Lake      |Longitudinal     |  0.14   |
-|Baseflow              |Lake      |Lateral          |  0.12   |
-|Stream order ratio    |Lake      |Longitudinal     |  0.10   |
-
-\normalsize
-
-## Does Lake and Stream Connectivity Control Phosphorus Retention in Lakes?
+## Conclusion
 
 \nocite{stacheleksoranno}
 
@@ -226,6 +210,10 @@ Connectivity at the network scale is more important than connectivity at finer s
 
 \stopcols
 
+## Speculation slide
+
+* WS:LA ratio
+
 <!-- \setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight} -->
 <!-- \begin{textblock}{0.8}(0.3,0.85) -->
 <!--   Lake-watershed connectivity related to watershed area -->
@@ -233,4 +221,4 @@ Connectivity at the network scale is more important than connectivity at finer s
 
 <!-- * Watershed controls on P delivery to lakes -->
 
-<!-- * WS:LA ratio -->
+
