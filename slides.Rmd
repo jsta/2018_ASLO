@@ -41,11 +41,15 @@ P retention indirectly controls sediment P accumulation \cite{SondergaardPersist
 
 \stopcols
 
-## Estimating P retention for a limited number of lakes
+## Predicting P retention is complex
+\vspace{-3em}
+\centering
+\includegraphics[width=10cm]{figures/pihm.png}\cite{bhatt2014tightly}
 
-* Process modelling mesh figure
-
-* Budget diagram 
+<!--  \setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight} -->
+<!-- \begin{textblock}{0.7}(0.5,0.17) -->
+<!--   <!-- Only possible for a limited  \\ number of lakes --> -->
+<!--  \end{textblock} -->
 
 ## P retention conceptual model
 
@@ -146,12 +150,42 @@ ggplot(data = test3,
 
 \includegraphics[width=1\textwidth]{figures/conny_metric_key2.png}
 
-## Watershed extents
+## Watershed connections
 
 <!-- What is an appropriate scale for measuring connectivity? -->
 
+\vspace{-2em}
+
+\begincols
+
+\hfill\column{0.6\textwidth}
+
 \centering
-\includegraphics[width=0.6\textwidth]{figures/iws_nws.pdf}
+\includegraphics[width=\textwidth]{figures/iws_nws.pdf}
+
+\hfill\column{0.4\textwidth}
+
+
+\stopcols
+
+## Watershed connections
+
+<!-- What is an appropriate scale for measuring connectivity? -->
+
+\vspace{-2em}
+
+\begincols
+
+\hfill\column{0.6\textwidth}
+
+\centering
+\includegraphics[width=\textwidth]{figures/iws_nws.pdf}
+
+\hfill\column{0.4\textwidth}
+
+\includegraphics[width=\textwidth]{figures/iws_vs_nws-gis-1.pdf}
+
+\stopcols
 
 ## {.plain}
 
@@ -159,9 +193,27 @@ ggplot(data = test3,
 
 ## Methods - Connectivity partitions
 
-* Lake map
+\vspace{-2em}
 
-* Tree figure
+\begincols
+
+\hfill\column{0.5\textwidth}
+
+```{r nes_map, echo=FALSE, message=FALSE, warning=FALSE}
+
+```
+
+\hfill\column{0.5\textwidth}
+
+\centering
+
+<!-- \includegraphics[width=0.5\textwidth]{figures/plot_tree_example-1.pdf} -->
+
+<!-- \vspace{1em} -->
+
+\includegraphics[width=0.7\textwidth]{figures/partition_example_scatter-1.pdf}
+
+\stopcols
 
 ## Methods - P retention modelling
 
@@ -171,9 +223,7 @@ ggplot(data = test3,
 
 \hfill\column{0.5\textwidth}
 
-```{r nes_map, echo=FALSE, message=FALSE, warning=FALSE}
-
-```
+\includegraphics[width=\textwidth]{figures/best_partition_maps-1.pdf}
 
 \hfill\column{0.5\textwidth}
 
@@ -188,7 +238,7 @@ ggplot(data = test3,
 \vspace{-1em}
 \centering
 
-\includegraphics[width=0.75\textwidth]{figures/06_k-1.pdf}
+\includegraphics[width=\textwidth]{figures/06_k-3.pdf}
 
 ## Conclusion
 
@@ -198,21 +248,16 @@ ggplot(data = test3,
 
 \includegraphics[width=0.9\textwidth]{figures/conceptual_p-cycle_pt2.png}
 
-\begincols[t]
+\setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight}
+\begin{textblock}{0.7}(0.4,0.19)
+  Connectivity of lakes and their watersheds is related to P retention.
 
-\hfill\column{0.6\textwidth}
-
-\hfill\column{0.4\textwidth}
-
-Connectivity of lakes and their watersheds is related to P retention.
-
-\vspace{2em}
+\vspace{5em}
 
 Connectivity at the network scale is more important than connectivity at finer scales.
+ \end{textblock}
 
-\stopcols
-
-## Speculation slide
+## Implications
 
 * WS:LA ratio
 

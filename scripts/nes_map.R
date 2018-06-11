@@ -36,7 +36,7 @@ palette <- c("black",
 (m_nes <- tm_shape(us) + tm_polygons() +
           tm_shape(nes_extent) + tm_borders(lwd = 2) +
           tm_shape(dt) + tm_dots("connectivity", palette = palette,
-                                 size = 0.2, legend.show = TRUE)) +
+                                 size = 0.15, legend.show = FALSE)) +
           # tm_credits("National Eutrophication Survey") +
           tm_layout(frame = FALSE,
                     legend.outside = TRUE,
