@@ -41,7 +41,7 @@ P retention indirectly controls sediment P accumulation \cite{SondergaardPersist
 
 \stopcols
 
-## Predicting P retention is complex
+## Predicting flux is complex
 \vspace{-3em}
 \centering
 \includegraphics[width=10cm]{figures/pihm.png}\cite{bhatt2014tightly}
@@ -189,7 +189,7 @@ ggplot(data = test3,
 
 ## {.plain}
 
-\plain {1. Does connectivity of lakes and their watersheds influence lake phosphorus retention?}{2. What is the relative importance of \alert{different connectivity metrics} in determining lake P retention and \alert{what spatial extents are most important} for connectivity and P retention?}
+\plain{1. Does connectivity of lakes and their watersheds influence lake phosphorus retention?}{2. What is the relative importance of \texttt{different connectivity metrics} in determining lake P retention and \alert{what spatial extents are most important} for connectivity and P retention?}
 
 ## Methods - Connectivity partitions
 
@@ -211,7 +211,7 @@ ggplot(data = test3,
 
 <!-- \vspace{1em} -->
 
-\includegraphics[width=0.7\textwidth]{figures/partition_example_scatter-1.pdf}
+\includegraphics[width=0.8\textwidth]{figures/partition_example_scatter-1.pdf}
 
 \stopcols
 
@@ -221,13 +221,13 @@ ggplot(data = test3,
 
 \begincols
 
-\hfill\column{0.5\textwidth}
+\hfill\column{0.55\textwidth}
 
-\includegraphics[width=\textwidth]{figures/best_partition_maps-1.pdf}
+\includegraphics[width=\textwidth]{figures/best_partition_maps-1.png}
 
-\hfill\column{0.5\textwidth}
+\hfill\column{0.45\textwidth}
 
-```{r distribution_cartoons, echo=FALSE, message=FALSE, warning=FALSE}
+```{r distribution_cartoons, echo=FALSE, message=FALSE, warning=FALSE, fig.width=2.5}
 
 ```
 
@@ -249,17 +249,15 @@ ggplot(data = test3,
 \includegraphics[width=0.9\textwidth]{figures/conceptual_p-cycle_pt2.png}
 
 \setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight}
-\begin{textblock}{0.7}(0.4,0.19)
-  Connectivity of lakes and their watersheds is related to P retention.
-
-\vspace{5em}
-
-Connectivity at the network scale is more important than connectivity at finer scales.
+\begin{textblock}{0.7}(0.35,0.78)
+Connectivity metrics at the network scale \\ have a greater effect on P retention than \\ metrics at finer scales.
  \end{textblock}
 
 ## Implications
 
-* WS:LA ratio
+<!-- * WS:LA ratio -->
+\centering
+\includegraphics[width=0.4\textwidth]{figures/iws_vs_nws-gis-1.pdf}
 
 <!-- \setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight} -->
 <!-- \begin{textblock}{0.8}(0.3,0.85) -->
@@ -267,5 +265,3 @@ Connectivity at the network scale is more important than connectivity at finer s
 <!--  \end{textblock} -->
 
 <!-- * Watershed controls on P delivery to lakes -->
-
-
