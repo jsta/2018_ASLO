@@ -41,13 +41,11 @@ P retention indirectly controls sediment P accumulation \cite{SondergaardPersist
 
 \stopcols
 
-## Estimating P retention for a single lake
+## Estimating P retention for a limited number of lakes
 
-* Field work material
+* Process modelling mesh figure
 
-* Sediment traps
-
-* Benthic coring
+* Budget diagram 
 
 ## P retention conceptual model
 
@@ -159,7 +157,11 @@ ggplot(data = test3,
 
 \plain {1. Does connectivity of lakes and their watersheds influence lake phosphorus retention?}{2. What is the relative importance of \alert{different connectivity metrics} in determining lake P retention and \alert{what spatial extents are most important} for connectivity and P retention?}
 
-## Methods - Connectivity groups
+## Methods - Connectivity partitions
+
+* Lake map
+
+* Tree figure
 
 ## Methods - P retention modelling
 

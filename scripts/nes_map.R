@@ -27,8 +27,11 @@ nes_extent <- group_by(us, jurisdiction_type)
 nes_extent <- st_union(nes_extent)
 nes_extent <- as_Spatial(nes_extent)
 
-palette <- c(viridis::viridis(1, begin = 0),
-             viridis::viridis(1, begin = 0.5))
+# palette <- c(viridis::viridis(1, begin = 0),
+#              viridis::viridis(1, begin = 0.5))
+
+palette <- c("black",
+              "black")
 
 (m_nes <- tm_shape(us) + tm_polygons() +
           tm_shape(nes_extent) + tm_borders(lwd = 2) +
