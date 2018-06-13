@@ -33,22 +33,27 @@ knitr::read_chunk("scripts/nes_map.R")
 
 \hfill\column{0.54\textwidth}
 
-P retention directly controls downstream transport \cite{alexander_estimating_2002}
+P retention directly controls downstream transport \footnotesize \cite{alexander_estimating_2002} \normalsize
 
 \vspace{5em}
 
-P retention indirectly controls sediment P accumulation \cite{SondergaardPersistentinternalphosphorus2013}
+P retention indirectly controls sediment P accumulation \footnotesize \cite{SondergaardPersistentinternalphosphorus2013} \normalsize
 
 \stopcols
 
-## Predicting flux is complex
+## Predicting flux is complex and labor intensive
 \vspace{-3em}
 \centering
-\includegraphics[width=10cm]{figures/pihm.png}\cite{bhatt2014tightly}
+\includegraphics[width=10cm]{figures/pihm.png} \footnotesize \cite{bhatt2014tightly} \normalsize
+
+<!-- \setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight} -->
+<!-- \begin{textblock}{0.7}(0.5,0.33) -->
+<!--   Sediment traps -->
+<!--  \end{textblock} -->
 
 <!--  \setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight} -->
-<!-- \begin{textblock}{0.7}(0.5,0.17) -->
-<!--   <!-- Only possible for a limited  \\ number of lakes --> -->
+<!-- \begin{textblock}{0.7}(0.5,0.57) -->
+<!--   Benthic coring -->
 <!--  \end{textblock} -->
 
 ## P retention conceptual model
@@ -202,7 +207,7 @@ ggplot(data = test3,
 \setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight}
 \begin{textblock}{0.6}(0.11,0.75)
 NES Lakes (n = 129) \\ 
-\cite{StachelekNationalEutrophicationSurvey2017, USEPANUSEationalEutrophicationSurvey1978}
+\footnotesize \cite{StachelekNationalEutrophicationSurvey2017, USEPANUSEationalEutrophicationSurvey1978} \normalsize
  \end{textblock}
 
 \includegraphics[width=\textwidth]{figures/best_partition_maps-1.png}
