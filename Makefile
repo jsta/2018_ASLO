@@ -5,7 +5,7 @@ background.png: makebackground.jl
 
 .PHONY: all clean
 
-slides.md: slides.Rmd figures/incrementalcumulative.png
+slides.md: slides.Rmd
 	Rscript -e "library(knitr); knit(input='$<')"
 
 slides.tex: slides.md

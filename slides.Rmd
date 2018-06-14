@@ -10,7 +10,7 @@ nocite: |
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, fig.path = "figures/", dpi=300, fig.height=3, fig.width=3)
+knitr::opts_chunk$set(echo = FALSE, fig.path = "figures/", dpi=300, fig.height=3, fig.width=3, dev.args = list(bg="transparent"))
 ```
 
 ```{r read_chunks, echo=FALSE}
@@ -122,9 +122,9 @@ ggplot(data = test3,
         axis.text.x = element_text(size = 7),
         axis.text.y = element_text(size = 9), 
         axis.title = element_text(size = 10), 
-        panel.background = element_rect(fill = "transparent"), 
+        panel.background = element_rect(fill = "transparent", color = NA), 
         plot.background = element_rect(
-          color = "transparent", 
+          color = NA, 
           fill = "transparent"), 
         panel.border = element_blank()) +
   xlab("Residence Time") +
@@ -281,10 +281,3 @@ NES Lakes (n = 129) \\
 \includegraphics[width=\textwidth]{figures/iws_vs_nws-gis-1.pdf}
 
 \stopcols
-
-<!-- \setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight} -->
-<!-- \begin{textblock}{0.8}(0.3,0.85) -->
-<!--   Lake-watershed connectivity related to watershed area -->
-<!--  \end{textblock} -->
-
-<!-- * Watershed controls on P delivery to lakes -->
